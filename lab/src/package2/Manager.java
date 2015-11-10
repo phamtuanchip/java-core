@@ -5,6 +5,7 @@ import java.util.Date;
 public class Manager extends Employee {
 	String role;
 	double bonus;
+	
 	 public Manager(String name, Date dob, String town, double salary, String role){
 		 super(name, dob, town, salary);
 		 this.role = role;

@@ -7,13 +7,31 @@ public class First {
 
 	public static void main(String[] args) {
 
-		Employee e = new Employee();
+		
+		String s1 = "PM" ;
+		String s2 = "PM" ;
+		System.out.println("S1== S2 " + (s1 == s2));
+		
+		System.out.println("S1== PM " + (s1 == "PM"));
+		 
+		System.out.println("PM == PM " + ("PM" == "PM"));
+		
+		System.out.println("S1.equals(S2) " + s1.equals(s2));
+		
+		String s3 = new String("PM") ;
+		String s4 = new String("PM") ;
+		
+		System.out.println("S3== S4 " + (s3 == s4));
+		System.out.println("S3.equals(S4) " + s3.equals(s4));
+		
+		
 		SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			e.setDOB(sf.parse("10/11/1991"));
-			e.setName("Nguyen Van A");
-			e.setHome("Hanoi");
-			e.setSalary(5000000);
+			//e.setDOB(sf.parse("10/11/1991"));
+			//e.setName("Nguyen Van A");
+			//e.setHome("Hanoi");
+			//e.setSalary(5000000);
+			Employee e = new Employee("Nguyen Van A", sf.parse("10/11/1991"), "Hanoi", 5000000);
 			Manager m1 = new Manager("Nguyen Van M", sf.parse("10/11/1981"), "Hanoi", 5000000, "TL");
 			Manager m2 = new Manager("Nguyen Van T", sf.parse("10/11/1980"), "Hanoi", 5000000, "PM");
 			System.out.println("Ho ten \t\t\t Ngay sinh \t vai tro \t luong \t\t thuong \t thuc linh");

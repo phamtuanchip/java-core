@@ -20,7 +20,7 @@ public class First {
 	 
 		SimpleDateFormat sf = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			String exist = "Y";
+			String exist = "Y"; //Disable menu
 			int i = 1;
 			ArrayList<Employee> list = new ArrayList<Employee>();
 			while("N".equalsIgnoreCase(exist)) {
@@ -43,17 +43,17 @@ public class First {
 			}  
 			
 			Employee e1 = new Employee("Nguyen Van A", sf.parse("10/11/1991"), "Hanoi", 5000000);
-			Manager m1 = new Manager("Nguyen Van M", sf.parse("10/11/1981"), "Hanoi", 5000000, ROLE.role_TL);
-			Manager m2 = new Manager("Nguyen Van T", sf.parse("10/11/1980"), "Hanoi", 5000000, ROLE.role_PM);
+			//Manager m1 = new Manager("Nguyen Van M", sf.parse("10/11/1981"), "Hanoi", 3000000, ROLE.role_TL);
+			//Manager m2 = new Manager("Nguyen Van T", sf.parse("10/11/1980"), "Hanoi", 5020000, ROLE.role_PM);
 			
 			Employee e2 = new Employee("Nguyen Van C", sf.parse("11/11/1991"), "Hanoi", 5000000);
-			Employee e3 = new Employee("Nguyen Van B", sf.parse("12/11/1991"), "Hanoi", 5000000);
-			Employee e4 = new Employee("Nguyen Van D", sf.parse("13/11/1991"), "Hanoi", 5000000);
-			Employee e5 = new Employee("Nguyen Van G", sf.parse("14/11/1991"), "Hanoi", 5000000);
+			Employee e3 = new Employee("Nguyen Van B", sf.parse("12/11/1991"), "Hanoi", 4100000);
+			Employee e4 = new Employee("Nguyen Van D", sf.parse("13/11/1991"), "Hanoi", 5700000);
+			Employee e5 = new Employee("Nguyen Van G", sf.parse("14/11/1991"), "Hanoi", 2000000);
 			Employee e6 = new Employee("Nguyen Van F", sf.parse("15/11/1991"), "Hanoi", 5000000);
-			Employee e7 = new Employee("Nguyen Van E", sf.parse("16/11/1991"), "Hanoi", 5000000);
-			Employee e8 = new Employee("Nguyen Van I", sf.parse("17/11/1991"), "Hanoi", 5000000);
-			Employee e9 = new Employee("Nguyen Van H", sf.parse("18/11/1991"), "Hanoi", 5000000);
+			Employee e7 = new Employee("Nguyen Van E", sf.parse("16/11/1991"), "Hanoi", 1000000);
+			Employee e8 = new Employee("Nguyen Van I", sf.parse("17/11/1991"), "Hanoi", 5500000);
+			Employee e9 = new Employee("Nguyen Van H", sf.parse("18/11/1991"), "Hanoi", 5900000);
 			
 			list.add(e1);
 			list.add(e2);
@@ -73,6 +73,18 @@ public class First {
 			
 			Collections.sort(list);
 			System.out.println("================Danh sach da sap xep lai =================");
+			System.out.println("Ho ten \t\t\t Ngay sinh \t vai tro \t luong \t\t thuong \t thuc linh");
+			for(Employee e: list)
+			System.out.println(e.getName() +"\t\t" + sf.format(e.getDateOfBirth()) + " \t\t\t "+e.getSalary()+" \t\t\t" + e.getSalary());
+			
+			Collections.sort(list, new DateOfBirthComparator());
+			System.out.println("================Danh sach da sap xep lai theo ngay sinh=================");
+			System.out.println("Ho ten \t\t\t Ngay sinh \t vai tro \t luong \t\t thuong \t thuc linh");
+			for(Employee e: list)
+			System.out.println(e.getName() +"\t\t" + sf.format(e.getDateOfBirth()) + " \t\t\t "+e.getSalary()+" \t\t\t" + e.getSalary());
+			
+			Collections.sort(list, new SalaryComparator());
+			System.out.println("================Danh sach da sap xep lai theo luong =================");
 			System.out.println("Ho ten \t\t\t Ngay sinh \t vai tro \t luong \t\t thuong \t thuc linh");
 			for(Employee e: list)
 			System.out.println(e.getName() +"\t\t" + sf.format(e.getDateOfBirth()) + " \t\t\t "+e.getSalary()+" \t\t\t" + e.getSalary());

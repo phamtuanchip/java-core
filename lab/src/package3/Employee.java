@@ -10,6 +10,10 @@ public class Employee extends Person {
 		this.salary = salary;
 	}
 	
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setSalary(double salary){
 		this.salary = salary;
 	}  

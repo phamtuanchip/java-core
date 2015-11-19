@@ -3,7 +3,7 @@ package package5;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Person implements Human, Serializable{
+public class Person extends People implements Human, Serializable{
 	String Name = "";
 	Date DateOfBirth = new Date();
 	String HomeTown = "";
@@ -55,5 +55,10 @@ public class Person implements Human, Serializable{
 	@Override
 	public String getPlaceOfBirth() {  
 		return HomeTown;
+	}
+	@Override
+	public void setId(int id) {
+		id = this.hashCode();
+		
 	}
 }

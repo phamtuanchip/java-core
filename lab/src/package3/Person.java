@@ -15,7 +15,7 @@ public class Person {
 		DateOfBirth = dob;
 		HomeTown = town;
 	}
-	String getName() {
+public String getName() {
 		
 		return Name; 
 	}
@@ -30,7 +30,7 @@ public class Person {
 		return HomeTown;
 	}
 	
-	void setName(String n) {
+	public	void setName(String n) {
 		Name = n;
 	}
 	
